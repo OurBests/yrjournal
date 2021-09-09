@@ -12,8 +12,6 @@ namespace yrjournal.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
-            Database.Migrate();
         }
         public DbSet<JournalModel> Journal { get; set; }
     }
