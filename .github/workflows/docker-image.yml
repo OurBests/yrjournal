@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: echo "${{ secrets.APPSETTINGS }}" > appsettings.json && docker login -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }} && docker build . --file Dockerfile --tag mhmn/journal:latest && docker push mhmn/journal:latest
+      run: echo '${{ secrets.APPSETTINGS }}' > appsettings.json && docker login -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }} && docker build . --file Dockerfile --tag mhmn/journal:latest && docker push mhmn/journal:latest
       
     
       
