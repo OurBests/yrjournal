@@ -1,0 +1,41 @@
+@model System.Collections.Generic.List<yrjournal.Models.JournalModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+             <th>جفت ارز</th>
+             <th>حجم</th>
+             <th>Long/Short</th>
+             <th>سود/ضرر</th>
+             <th>تایم فریم سیگنال</th>
+             <th>سیگنال اصلی</th>
+             <th>سیگنال فرعی</th>
+             <th>تایم فریم ورود</th>
+             <th>E1 - E4</th>
+             <th>توضیحات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PairName</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Type</td>
+                    <td>@item.PL</td>
+                    <td>@item.SignalTimeFrame</td>
+                    <td>@item.MainSignal</td>
+                    <td>@item.ConfirmationSignal</td>
+                    <td>@item.EntryTimeFrame</td>
+                    <td>@item.EntryPhase</td>
+                    <td><a href="/Journal/JournalDetailsById/@item.Id" target="_blank">جزئیات</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+</div>
